@@ -31,6 +31,8 @@ class CategoryRoute extends StatelessWidget {
 
   /// Creating the correct number of rows for the list view.
   /// For portrait, we construct a [ListView] from the list of category widgets.
+  ///
+  /// '_buildCategoryWidgets' accepts a  List<Widget> of type 'categories' and returns ListView.builder
   Widget _buildCategoryWidgets(List<Widget> categories) {
     return ListView.builder(
       itemBuilder: (BuildContext context, int index) => categories[index],
@@ -40,8 +42,12 @@ class CategoryRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    // Creating an empty List i.e. 'categories' of type '<Category>'
+    // A single '<Category>' wodget is composed of an [Icon], a [Text] and InkWell/Highlighter[Color]
     final categories = <Category>[];
 
+    // adding 'Category' elements to the 'categories' List.
     for (var i = 0; i < _categoryNames.length; i++) {
       categories.add(Category(
         name: _categoryNames[i],
@@ -50,6 +56,7 @@ class CategoryRoute extends StatelessWidget {
       ));
     }
 
+    // providing implementation for listView.
     final listView = Container(
       color: _backgroundColor,  // BG color for the entire container
       padding: EdgeInsets.symmetric(horizontal: 8.0),

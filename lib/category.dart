@@ -8,7 +8,7 @@ final _rowHeight = 100.0;
 final _borderRadius = BorderRadius.circular(_rowHeight / 2);
 
 
-/// A custom [Category] widget.
+/// Providing implementation for a single "custom [Category] widget".
 ///
 /// The widget is composed on an [Icon] and [Text]. Tapping on the widget shows
 /// a colored [InkWell] animation.
@@ -67,19 +67,11 @@ class Category extends StatelessWidget {
               // You can add the type argument if you'd like, i.e. <Widget>[].
               // See https://www.dartlang.org/guides/language/effective-dart/usage#do-use-collection-literals-when-possible
               children: [
-                Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Icon(
-                    iconLocation,
-                    size: 60.0,
-                  ),
+                Padding(padding: EdgeInsets.all(16.0),
+                  child: Icon(iconLocation, size: 60.0,),
                 ),
                 Center(
-                  child: Text(
-                    name,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.headline,
-                  ),
+                  child: Text(name, textAlign: TextAlign.center, style: Theme.of(context).textTheme.headline,),
                 ),
               ],
             ),
